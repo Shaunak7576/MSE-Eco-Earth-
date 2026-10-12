@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoEarth - Protect Our Planet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#home" class="logo">🌍 EcoEarth</a>
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#tips">Eco Tips</a></li>
+        <li><a href="#waste">Waste</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+        <li><a href="#calculator">Calculator</a></li>
+        <li><a href="#pledge">Pledge</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      <button id="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>There Is No Planet B</h1>
+      <p>Small actions by many people can change the world. Learn, act and inspire others to protect our environment.</p>
+      <a href="#pledge" class="btn">Take the Pledge</a>
+      <a href="#tips" class="btn btn-outline">Explore Eco Tips</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="stat"><h2 class="counter" data-target="8">0</h2><span>Million tonnes of plastic enter oceans yearly</span></div>
+    <div class="stat"><h2 class="counter" data-target="10">0</h2><span>Million hectares of forest lost yearly</span></div>
+    <div class="stat"><h2 class="counter" data-target="1">0</h2><span>°C+ global warming since 1900s</span></div>
+    <div class="stat"><h2 class="counter" data-target="33">0</h2><span>% of food produced is wasted</span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <h2 class="title">Why Environmental Protection Matters</h2>
+    <div class="cards">
+      <div class="card"><div class="icon">🌳</div><h3>Save Forests</h3><p>Forests absorb CO₂, give us oxygen and are home to millions of species.</p></div>
+      <div class="card"><div class="icon">💧</div><h3>Conserve Water</h3><p>Only 1% of Earth's water is easily accessible. Every drop counts.</p></div>
+      <div class="card"><div class="icon">⚡</div><h3>Renewable Energy</h3><p>Solar, wind and hydro power reduce our dependence on fossil fuels.</p></div>
+      <div class="card"><div class="icon">♻️</div><h3>Reduce Waste</h3><p>Reduce, Reuse, Recycle to cut landfill waste and pollution.</p></div>
+    </div>
+  </section>
+
+  <!-- ECO TIPS -->
+  <section id="tips" class="section alt">
+    <h2 class="title">Eco-Friendly Practices</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="home">Home</button>
+      <button class="filter-btn" data-filter="travel">Travel</button>
+      <button class="filter-btn" data-filter="food">Food</button>
+      <button class="filter-btn" data-filter="shopping">Shopping</button>
+    </div>
+    <div class="cards" id="tips-container"></div>
+  </section>
+
+  <!-- WASTE MANAGEMENT -->
+  <section id="waste" class="section">
+    <h2 class="title">Waste Segregation Guide</h2>
+    <p class="subtitle">Click a bin to see what goes inside.</p>
+    <div class="bins">
+      <button class="bin green" data-bin="wet">🟢 Wet Waste</button>
+      <button class="bin blue" data-bin="dry">🔵 Dry Waste</button>
+      <button class="bin red" data-bin="hazard">🔴 Hazardous</button>
+      <button class="bin grey" data-bin="ewaste">⚫ E-Waste</button>
+    </div>
+    <div id="bin-info" class="bin-info">Select a bin above to learn more.</div>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="quiz" class="section alt">
+    <h2 class="title">Test Your Eco Knowledge</h2>
+    <div class="quiz-box">
+      <div id="quiz-progress"></div>
+      <h3 id="question"></h3>
+      <div id="options"></div>
+      <button id="next-btn" class="btn" disabled>Next</button>
+      <div id="result" class="result"></div>
+    </div>
+  </section>
+
+  <!-- CARBON CALCULATOR -->
+  <section id="calculator" class="section">
+    <h2 class="title">Carbon Footprint Calculator</h2>
+    <form id="carbon-form" class="form">
+      <label>Daily travel by car/bike (km)
+        <input type="number" id="travel" min="0" value="10" required>
+      </label>
+      <label>Monthly electricity use (units/kWh)
+        <input type="number" id="electricity" min="0" value="150" required>
+      </label>
+      <label>Meat meals per week
+        <input type="number" id="meat" min="0" max="21" value="4" required>
+      </label>
+      <label>Flights per year
+        <input type="number" id="flights" min="0" value="1" required>
+      </label>
+      <button type="submit" class="btn">Calculate</button>
+    </form>
+    <div id="carbon-result" class="carbon-result"></div>
+  </section>
+
+  <!-- PLEDGE -->
+  <section id="pledge" class="section alt">
+    <h2 class="title">Take the Green Pledge</h2>
+    <form id="pledge-form" class="form" novalidate>
+      <label>Name
+        <input type="text" id="name" placeholder="Your name">
+        <small class="error" id="name-error"></small>
+      </label>
+      <label>Email
+        <input type="email" id="email" placeholder="you@example.com">
+        <small class="error" id="email-error"></small>
+      </label>
+      <label>I pledge to
+        <select id="action">
+          <option value="">-- Choose an action --</option>
+          <option>Use less plastic</option>
+          <option>Plant a tree every year</option>
+          <option>Save water and electricity</option>
+          <option>Use public transport</option>
+          <option>Segregate my waste</option>
+        </select>
+        <small class="error" id="action-error"></small>
+      </label>
+      <button type="submit" class="btn">Pledge Now</button>
+    </form>
+    <p id="pledge-message" class="pledge-message"></p>
+    <p class="pledge-count">🌱 Total pledges on this device: <strong id="pledge-count">0</strong></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 EcoEarth | Made with 💚 for a greener planet</p>
+    <p>"The Earth is what we all have in common."</p>
+  </footer>
+
+  <button id="top-btn" aria-label="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
